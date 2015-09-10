@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animate.css!</title>
+  <link rel="stylesheet" href="animate.min.css">
+</head>
+<body>
+
+  <a href="#" class="button">Holla!</a>
+  
+  <input type="text" name='firstName'>
+
+  <style>
+    body {
+      margin: 50px;
+      background:#2980b9;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    a.button {
+      background:#e74c3c;
+      color:white;
+      padding:20px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 50px;
+      border-radius: 10px;
+      /*-webkit-animation-duration: 3s;*/
+      /*-webkit-animation-delay: 2s;*/
+      /*-webkit-animation-iteration-count: infinite;*/
+    }
+  </style>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    $(function() {
+      var animationName = 'animated shake';
+      var animationend = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+      $('a.button').on('click',function() {
+        
+        $('input[name=firstName]').addClass(animationName).one(animationend,function() {
+          $(this).removeClass(animationName);
+        });
+
+      });
+
+    });
+  </script>
+</body>
+</html>
